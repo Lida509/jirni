@@ -1,0 +1,40 @@
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Code Game — JS Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🕹️ Навчальна гра з JavaScript</h1>
+    <p class="desc">Використовуй <b>moveUp(n)</b>, <b>moveDown(n)</b>, <b>moveLeft(n)</b>, <b>moveRight(n)</b>.</p>
+  </header>
+
+  <div class="controls">
+    <button class="level" onclick="setLevel(1)">Рівень 1</button>
+    <button class="level" onclick="setLevel(2)">Рівень 2</button>
+    <button class="level" onclick="setLevel(3)">Рівень 3</button>
+    <button class="level" onclick="setLevel(4)">Рівень 4</button>
+    <button class="level" onclick="setLevel(5)">Рівень 5</button>
+    <button class="run" id="runBtn" onclick="runCode()">Запустити</button>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <h2 id="levelTitle">Рівень 1</h2>
+      <div id="board"></div>
+    </div>
+    <div class="right">
+      <textarea id="code" spellcheck="false">// Код для проходження рівня</textarea>
+      <div class="status">
+        <div id="points">Очки: 0</div>
+        <div id="lives">❤️❤️❤️</div>
+        <div id="message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
