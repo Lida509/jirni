@@ -200,8 +200,8 @@ textarea#code {
     flex: 1 1 100%; max-width: 100%; 
   }
   #board {
-    width: 400px;          /* фіксована ширина */
-    height: 400px;         /* фіксована висота */
-    aspect-ratio: unset;   /* вимикаємо автоматичне підлаштування */
+    width: 400px;        
+    height: 400px;      
+    aspect-ratio: unset;   
   }
 }
