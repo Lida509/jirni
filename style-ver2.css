@@ -1,0 +1,207 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Segoe UI', Roboto, sans-serif; 
+  line-height: 1.4; 
+}
+body { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  padding: 0; 
+  margin: 0; 
+  background: #f0f2f5; 
+  color: #343a40; 
+  min-height: 100vh; 
+}
+header { 
+  text-align: center; 
+  width: 100%; 
+  margin-bottom: 2vh; 
+  padding-top: 1vh; 
+}
+h1 { 
+  font-size: 4vh; 
+  color: #007bff; 
+  margin-bottom: 0.5vh;
+}
+p.desc { 
+  font-size: 2vh; 
+  color: #6c757d; 
+  max-width: 900px; 
+  margin: auto; 
+}
+.controls { 
+  display: flex; 
+  gap: 1.5vh; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin-bottom: 2vh; 
+  width: 100%; 
+}
+button.level, button.run, button.restart { 
+  padding: 1vh 2.5vh; 
+  font-size: 2vh; 
+  border-radius: 10px; 
+  border: none; 
+  background: #007bff; 
+  color: #fff; 
+  cursor: pointer; 
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); 
+  transition: all 0.25s; 
+  font-weight: 600; 
+}
+button.level:hover:not(:disabled), button.run:hover, button.restart:hover { 
+  background: #0056b3; 
+  transform: translateY(-3px); 
+}
+button.level:disabled { 
+  background: #6c757d; 
+  cursor: not-allowed; 
+  box-shadow: none; 
+}
+.main {
+  display: flex; 
+  gap: 4vh; 
+  width: 100%; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  flex: 1; 
+  flex-wrap: wrap; 
+  padding: 0 2vh 4vh; 
+}
+.left { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 2vh; 
+  flex: 0 0 420px; 
+  max-width: 100%; 
+}
+#levelTitle { 
+  font-size: 2.6vh; 
+  font-weight: 700; 
+}
+#board { 
+  width: 100%; 
+  aspect-ratio: 1/1; 
+  display: grid; 
+  grid-template-columns: repeat(10, 1fr); 
+  gap: 5px; 
+  background: #e9ecef; 
+  padding: 8px; 
+  border-radius: 15px; 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+}
+.cell { 
+  background: #fff; 
+  border-radius: 8px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 2vh; 
+  transition: background 0.2s; 
+  aspect-ratio: 1/1; 
+  position: relative; 
+}
+.cell:hover { 
+  background: #cfe2ff; 
+}
+.player { 
+  background: #28a745; 
+  color: #fff; 
+  font-weight: bold; 
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.8); 
+  font-size: 3vh; 
+  border-radius: 50%; 
+  border: 3px solid #fff; 
+}
+.target { 
+  background: #fff; 
+  border: 3px solid #dc3545; 
+  font-size: 5.5vh; 
+  line-height: 1; 
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.7); 
+  border-radius: 8px; 
+  color: #dc3545; 
+}
+.wall { 
+  background: #6c757d !important; 
+  border-radius: 5px; 
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+.enemy { 
+  background: #ffc107; 
+  color: #000; 
+  font-weight: 800; 
+  box-shadow: 0 0 6px rgba(255,193,7,0.6); 
+  border-radius: 50%; 
+  font-size: 2.6vh; 
+  border: 2px solid #fff; 
+}
+.key { 
+  background: #17a2b8; 
+  color: #fff; 
+  font-weight: 800; 
+  border-radius: 6px; 
+  font-size: 2.4vh; 
+  box-shadow: 0 0 6px rgba(23,162,184,0.6); 
+  border: 2px solid #fff; 
+  padding: 2px; 
+}
+.right { 
+  flex: 1; 
+  min-width: 320px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 2vh; 
+  padding: 2vh;
+  border-radius: 15px; 
+  background: #fff; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+}
+textarea#code { 
+  width: 100%; 
+  height: 40vh; 
+  resize: vertical; 
+  padding: 1.5vh; 
+  font-size: 1.8vh; 
+  border-radius: 10px; 
+  border: 1px solid #ced4da; 
+  background: #f8f9fa; 
+  color: #212529; 
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05); 
+  font-family: 'Consolas', 'Monaco', monospace; line-height: 1.6; 
+}
+.status { 
+  display: flex;
+  flex-direction: column; 
+  gap: 1vh; align-items: flex-start; 
+}
+#points, #lives { 
+  font-size: 2.2vh;
+  font-weight: 700; 
+}
+#message { 
+  font-size: 2vh; 
+  min-height: 2.5vh; 
+  font-weight: 600; 
+  color: #dc3545; 
+}
+#message[style*="color: rgb(10, 170, 0)"] { 
+  color: #28a745 !important; 
+}
+@media (max-width: 800px) {
+  .main { 
+    flex-direction: column; align-items: stretch; 
+  }
+  .left, .right { 
+    flex: 1 1 100%; max-width: 100%; 
+  }
+  #board {
+    width: 400px;          /* фіксована ширина */
+    height: 400px;         /* фіксована висота */
+    aspect-ratio: unset;   /* вимикаємо автоматичне підлаштування */
+  }
+}
