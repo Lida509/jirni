@@ -344,5 +344,5 @@ points = STARTING_POINTS;
 setLevel(1);
 updateLevelButtons();
 updatePointsUI();
-setMessage("Готово! Починай кодити — коротка мелодія при старті.", true);
+setMessage("Починай кодити!", true);
 soundEvent('start');
