@@ -347,7 +347,7 @@ function setLevel(level) {
     levelTitleEl.innerText = `Рівень ${level}`;
     updateLevelButtons();
     document.body.removeChild(overlayEl);
-  }, 5500); // 10 секунд
+  }, 500); // 10 секунд
 }
 
 function runCode() {
